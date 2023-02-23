@@ -22,7 +22,7 @@ local default = {
     disable_in_replace_mode = true,
     ignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
     break_undo = true,
-    check_ts = false,
+    check_ts = true,
     enable_moveright = true,
     enable_afterquote = true,
     enable_check_bracket_line = true,
@@ -31,6 +31,7 @@ local default = {
     ts_config = {
         lua = { 'string', 'source' },
         javascript = { 'string', 'template_string' },
+		java = false,
     },
 }
 

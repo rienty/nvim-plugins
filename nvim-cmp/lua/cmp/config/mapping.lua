@@ -61,8 +61,8 @@ mapping.preset.insert = function(override)
         end
       end,
     },
-    ['<C-y>'] = {
-      i = mapping.confirm({ select = false }),
+    ['<CR>'] = {
+      i = mapping.confirm({ select = true }),
     },
     ['<C-e>'] = {
       i = mapping.abort(),
