@@ -20,9 +20,9 @@ local M = {}
 ---@type TSConfig
 local config = {
 	ensure_installed = {
-		"python",
 		"bash",
 		"c",
+		"lua",
 		"markdown",
 		"bibtex",
 		"latex",
