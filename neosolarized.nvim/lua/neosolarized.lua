@@ -44,6 +44,7 @@ function M.setup(opts)
 	local styles = M.styles
 
 	Color.new("base03", "#002b36")
+	Color.new("yay", "#DCDCDC")
 	Color.new("base02", "#073642")
 	Color.new("base01", "#586e75")
 	Color.new("base00", "#657b83")
@@ -60,7 +61,7 @@ function M.setup(opts)
 	Color.new("cyan", "#2aa198")
 	Color.new("green", "#719e07")
 	Color.new('white', '#ffffff')
-	Color.new('black', '#000000')
+	Color.new('black', '#404040')
 
 	Color.new("bg", colors.base03)
 	Group.new("Error", colors.red)
@@ -76,10 +77,10 @@ function M.setup(opts)
 
 
 	-- normal non-current text
-	Group.new('Normal', colors.base1, colors.NONE, styles.NONE)
+	Group.new('Normal', colors.black, colors.NONE, styles.NONE)
 	Group.new("NormalNC", colors.base0:dark(), bg_color)
 
-	Group.new("Comment", colors.base01, colors.none, opts.comment_italics and styles.italic or styles.NONE)
+	Group.new("Comment", colors.base1, colors.none, opts.comment_italics and styles.italic or styles.NONE)
 	Group.new("Constant", colors.cyan)
 	Group.new("Identifier", colors.blue)
 
@@ -119,7 +120,8 @@ function M.setup(opts)
 	Group.link("String", groups.Text)
 	Group.new("NonText", colors.base00, colors.none, styles.bold)
 	Group.new("StatusLine", colors.base1, colors.base02, styles.reverse)
-	Group.new("StatusLineNC", colors.base00, colors.base02, styles.reverse)
+	Group.new("StatusLineNC", colors.base01, colors.base02, styles.reverse)
+	Group.new("Visual", colors.base01, colors.base03, styles.reverse)
 	Group.new('Visual', colors.none, colors.white, styles.reverse)
 	Group.new("Directory", colors.blue)
 	Group.new("ErrorMsg", colors.red, colors.none, styles.reverse)
@@ -157,11 +159,10 @@ function M.setup(opts)
 	--Group.new("SpellRare", colors.cyan, colors.bg, styles.undercurl)
 
 	-- pum (popup menu)
-	Group.new("Pmenu", groups.Normal, colors.base02, styles.none) -- popup menu normal item
+	Group.new("Pmenu", groups.Normal, colors.yay, styles.none) -- popup menu normal item
 	Group.new("PmenuSel", colors.base01, colors.base2, styles.reverse) -- selected item
-	Group.new("PmenuSbar", colors.base02, colors.none, styles.reverse)
+	Group.new("PmenuSbar", colors.black, colors.none, styles.reverse)
 	Group.new("PmenuThumb", colors.base0, colors.none, styles.reverse)
-
 	-- be nice for this float border to be cyan if active
 	Group.new("FloatBorder", colors.base02)
 
@@ -171,10 +172,9 @@ function M.setup(opts)
 	Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
 
 
-
 	Group.new("LineNr", colors.base01, bg_color, styles.NONE)
-	Group.new("CursorLine", colors.none, colors.black, styles.NONE, colors.base1)
-	Group.new("CursorLineNr", colors.yellow, colors.black, styles.NONE, colors.green)
+	Group.new("CursorLine", colors.none, colors.yay, styles.NONE, colors.base1)
+	Group.new("CursorLineNr", colors.yellow, colors.yay, styles.NONE, colors.green)
 	Group.new("ColorColumn", colors.none, colors.base02, styles.NONE)
 	Group.new("Cursor", colors.base03, colors.base0, styles.NONE)
 	Group.link("lCursor", groups.Cursor)

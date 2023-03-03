@@ -4,7 +4,7 @@
 -- stylua: ignore
 local colors = {
   base03  =  '#002b36',
-  base02  =  '#073642',
+  base02  =  '#333333',
   base01  =  '#586e75',
   base00  =  '#657b83',
   base0   =  '#839496',

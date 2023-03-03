@@ -47,6 +47,9 @@
 
 (type_identifier) @type
 
+; '?' operator, replacement for Java @Nullable
+(nullable_type) @punctuation.special
+
 (type_alias
 	(type_identifier) @type.definition)
 
@@ -111,7 +114,7 @@
 		(type_identifier) @function)?
 		(#lua-match? @_import "^[a-z]"))
 
-; TODO: Seperate labeled returns/breaks/continue/super/this
+; TODO: Separate labeled returns/breaks/continue/super/this
 ;       Must be implemented in the parser first
 (label) @label
 
@@ -405,7 +408,7 @@
 ; NOTE: `interpolated_identifier`s can be highlighted in any way
 (line_string_literal
 	"$" @punctuation.special
-	(interpolated_identifier) @none)
+	(interpolated_identifier) @none @variable)
 (line_string_literal
 	"${" @punctuation.special
 	(interpolated_expression) @none
@@ -413,7 +416,7 @@
 
 (multi_line_string_literal
     "$" @punctuation.special
-    (interpolated_identifier) @none)
+    (interpolated_identifier) @none @variable)
 (multi_line_string_literal
 	"${" @punctuation.special
 	(interpolated_expression) @none

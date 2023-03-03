@@ -40,14 +40,18 @@ local config = {
 			}
 		} },
 		lualine_x = {
-			{ 'diagnostics',
+			{
+				'diff', symbols = { added = ' ', modified = ' ', removed = ' ' },
+			},
+			{
+				'diagnostics',
 				sources = { "nvim_diagnostic" },
 				symbols = { error = ' ', warn = '󰢚 ', info = '󰀃 ', hint = '󰃠 ' },
 				update_in_insert = true,
 				always_visible = false,
 			},
-			{ 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' }, },
 		},
+
 		lualine_y = { 'filetype', 'progress' },
 		lualine_z = { 'location' },
 	},
